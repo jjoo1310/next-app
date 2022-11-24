@@ -16,7 +16,7 @@ function Thumbnail(props: Props) {
                 src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`}
                 alt=''
                 className='object-cover rounded-sm md:rounded'
-                layout="fill"
+                fill
             />
         </div>
     )

@@ -24,8 +24,8 @@ function Banner(props: Props) {
                 <Image
                     src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
                     alt=""
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    className="object-cover"
                 />
             </div>
 
