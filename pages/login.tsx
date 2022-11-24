@@ -32,7 +32,7 @@ function Login() {
             <Image
                 src='https://assets.nflxext.com/ffe/siteui/vlv3/d0982892-13ac-4702-b9fa-87a410c1f2da/519e3d3a-1c8c-4fdb-8f8a-7eabdbe87056/AE-en-20220321-popsignuptwoweeks-perspective_alpha_website_large.jpg'
                 alt=""
-                fill
+                layout="fill"
                 className="-z-10 !hidden opacity-60 sm:!inline object-cover"
                 draggable={false}
             />
