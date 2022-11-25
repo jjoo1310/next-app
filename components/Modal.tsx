@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { HandThumbUpIcon, XMarkIcon, SpeakerXMarkIcon } from "@heroicons/react/24/outline";
 import MuiModal from '@mui/material/Modal'
 import { useEffect, useState } from "react";
@@ -7,6 +8,7 @@ import { Element, Genre } from '../typings'
 import ReactPlayer from 'react-player/lazy'
 import { FaPlay } from "react-icons/fa";
 import { PlusIcon, SpeakerWaveIcon } from "@heroicons/react/24/solid";
+import { baseUrl } from "../constants/movie";
 
 interface Props {
 
@@ -67,14 +69,24 @@ function Modal(props: Props) {
                 </button>
 
                 <div className="relative pt-[56.25%]">
-                    <ReactPlayer
-                        url={`https://www.youtube.com/watch?v=${trailer}`}
-                        width='100%'
-                        height='100%'
-                        style={{ position: 'absolute', top: '0', left: '0' }}
-                        playing
-                        muted={muted}
-                    />
+                    {
+                        (trailer && trailer != '') ?
+                            <ReactPlayer
+                                url={`https://www.youtube.com/watch?v=${trailer}`}
+                                width='100%'
+                                height='100%'
+                                style={{ position: 'absolute', top: '0', left: '0' }}
+                                playing
+                                muted={muted}
+                            />
+                            :
+                            <Image
+                                src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
+                                alt=""
+                                layout="fill"
+                                className="absolute top-0 left-0 object-cover w-full h-full"
+                            />
+                    }
                     <div className="absolute flex items-center justify-between w-full px-10 bottom-10">
                         <div className="flex space-x-2">
                             <button
